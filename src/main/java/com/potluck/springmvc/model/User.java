@@ -2,47 +2,36 @@ package com.potluck.springmvc.model;
 
 public class User {
 
-	private long id;
+	private String name;
 	
-	private String username;
-	
-	private String address;
+	private String phone;
 	
 	private String email;
 	
-	public User(){
-		id=0;
+	public User(){		
 	}
 	
-	public User(long id, String username, String address, String email){
-		this.id = id;
-		this.username = username;
-		this.address = address;
+	public User(String username, String phone, String email){
+		this.name = username;
+		this.phone = phone;
 		this.email = email;
 	}
 
-	public long getId() {
-		return id;
+	
+	public String getName() {
+		return name;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public String getEmail() {
@@ -54,10 +43,9 @@ public class User {
 	}
 
 	@Override
-	public int hashCode() {
-		final int prime = 31;
+	public int hashCode() {		
 		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
+		result = name.hashCode();
 		return result;
 	}
 
@@ -70,15 +58,14 @@ public class User {
 		if (!(obj instanceof User))
 			return false;
 		User other = (User) obj;
-		if (id != other.id)
+		if (!name.equalsIgnoreCase(other.name))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", address=" + address
-				+ ", email=" + email + "]";
+		return "User [name=" + name + ", phone=" + phone + ", email=" + email + "]";
 	}
 	
 

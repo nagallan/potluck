@@ -6,9 +6,7 @@ import com.potluck.springmvc.model.User;
 
 
 
-public interface UserService {
-	
-	User findById(long id);
+public interface UserService {	
 	
 	User findByName(String name);
 	
@@ -16,7 +14,7 @@ public interface UserService {
 	
 	void updateUser(User user);
 	
-	void deleteUserById(long id);
+	void deleteUser(String name);
 
 	List<User> findAllUsers(); 
 	

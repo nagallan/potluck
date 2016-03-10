@@ -5,7 +5,7 @@ App.factory('UserService', ['$http', '$q', function($http, $q){
 	return {
 		
 			fetchAllUsers: function() {
-					return $http.get('http://localhost:8080/potluck/user/')
+					return $http.get('/potluck/user/')
 							.then(
 									function(response){
 										return response.data;
@@ -18,7 +18,7 @@ App.factory('UserService', ['$http', '$q', function($http, $q){
 			},
 		    
 		    createUser: function(user){
-					return $http.post('http://localhost:8080/potluck/user/', user)
+					return $http.post('/potluck/user/', user)
 							.then(
 									function(response){
 										return response.data;
@@ -31,7 +31,7 @@ App.factory('UserService', ['$http', '$q', function($http, $q){
 		    },
 		    
 		    updateUser: function(user, id){
-					return $http.put('http://localhost:8080/potluck/user/'+id, user)
+					return $http.put('/potluck/user/'+id, user)
 							.then(
 									function(response){
 										return response.data;
@@ -44,7 +44,7 @@ App.factory('UserService', ['$http', '$q', function($http, $q){
 			},
 		    
 			deleteUser: function(id){
-					return $http.delete('http://localhost:8080/potluck/user/'+id)
+					return $http.delete('/potluck/user/'+id)
 							.then(
 									function(response){
 										return response.data;

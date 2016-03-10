@@ -2,7 +2,7 @@
 
 App.controller('UserController', ['$scope', 'UserService', function($scope, UserService) {
           var self = this;
-          self.user={id:null,username:'',address:'',email:''};
+          self.user={id:null,username:'',phone:'',email:''};
           self.users=[];
               
           self.fetchAllUsers = function(){
@@ -80,7 +80,7 @@ App.controller('UserController', ['$scope', 'UserService', function($scope, User
 
           
           self.reset = function(){
-              self.user={id:null,username:'',address:'',email:''};
+              self.user={id:null,username:'',phone:'',email:''};
               $scope.myForm.$setPristine(); //reset Form
           };
 
